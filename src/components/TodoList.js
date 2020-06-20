@@ -8,7 +8,11 @@ function TodoList(props) {
 	return (
 		<ul>
 			{todoArray.map((todo) => {
-				return <Todo id={todo.id} text={todo.text} completed={todo.completed} key={todo.id} />;
+				return (
+					<li key={todo.id}>
+						<Todo id={todo.id} text={todo.text} completed={todo.completed} />
+					</li>
+				);
 			})}
 		</ul>
 	);
