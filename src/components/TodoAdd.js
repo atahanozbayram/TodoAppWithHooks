@@ -11,3 +11,5 @@ function TodoAdd(props) {
 		</div>
 	);
 }
+
+export { TodoAdd as default };
