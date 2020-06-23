@@ -12,6 +12,11 @@ function TodoApp(props) {
 
 	// Function to be called for adding new todo
 	function todoAddCbFunction(todoText) {
+		// check wheter todoText is empty
+		// if so terminate the function
+
+		if (todoText === '') return;
+
 		setState((currentState) => {
 			const todo = {
 				id: currentState.todoCounter,

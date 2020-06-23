@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from '../styles/style.module.css';
 
 function TodoAdd(props) {
 	const inputRef = React.createRef();
@@ -19,11 +20,13 @@ function TodoAdd(props) {
 	}
 
 	return (
-		<div>
+		<div className={styles.todoAdd}>
 			<form>
-				<label>Todo:</label>
-				<input type="text" ref={inputRef} />
-				<button onClick={buttonClick}>ADD</button>
+				<div>
+					<label>Todo:</label>
+					<input type="text" ref={inputRef} />
+					<button onClick={buttonClick}>ADD</button>
+				</div>
 			</form>
 		</div>
 	);
