@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import TodoHeader from '../components/TodoHeader';
 import TodoAdd from '../components/TodoAdd';
 import TodoList from '../components/TodoList';
@@ -9,6 +9,16 @@ function TodoApp(props) {
 		todoArray: [],
 		todoCounter: 0,
 	});
+
+	// this effect will be used at the first render of the TodoApp
+	useEffect(() => {
+		setState(JSON.parse(localStorage.getItem('todoApp')));
+	}, []);
+
+	// this effect will keep logging the new state on every change
+	useEffect(() => {
+		localStorage.setItem('todoApp', JSON.stringify(state));
+	}, [state]);
 
 	// Function to be called for adding new todo
 	function todoAddCbFunction(todoText) {
