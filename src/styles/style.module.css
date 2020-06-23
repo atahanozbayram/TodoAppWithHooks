@@ -96,3 +96,17 @@
 	background-color: #f38375;
 	color: #fff;
 }
+
+@media screen and (max-width: 960px) {
+	.todoAdd form div {
+		margin: auto 20px;
+		width: calc(100% - 40px);
+		display: grid;
+		grid-template-columns: 100px 1fr 100px;
+		gap: 20px;
+	}
+
+	.todo div {
+		grid-template-columns: 1fr 100px 100px;
+	}
+}
